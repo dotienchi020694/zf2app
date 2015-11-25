@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-12 text-right">
+         <?php
+             if ($user = $this->identity()) {
+                 echo 'Logged in as: ' . $this->escapeHtml($user);
+             } else {
+                 echo 'Not logged in';
+             }
+         ?>
+        <a class="btn btn-danger btn-xs" href="<?php echo $this->url('logout'); ?>" role="button">logout</a>
+    </div>
+</div>

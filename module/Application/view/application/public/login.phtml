@@ -1,0 +1,23 @@
+<?php
+    $form->setAttribute('action', $this->url('login'));
+    $form->prepare();
+?>
+<h1>Login</h1>
+
+<?php echo $this->form()->openTag($form); ?>
+
+<?php echo $this->flashMessenger()->render('default', array('alert', 'alert-danger'));?>
+
+<div class="row">
+    <div class="col-md-12">
+    <?php echo $this->formRow($form->get('username')); ?>
+    </div>
+    <div class="col-md-12">
+    <?php  echo $this->formRow($form->get('password')); ?>
+    </div>
+    <div class="col-md-12">
+    <?php echo $this->formSubmit($form->get('send')); ?>
+    </div>
+</div>
+
+<?php echo $this->form()->closeTag(); ?>

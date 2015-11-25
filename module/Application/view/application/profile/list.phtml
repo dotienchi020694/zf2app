@@ -1,0 +1,38 @@
+<div class="jumbotron">
+<h1>List of Profiles</h1>
+</div>
+<div class="row">
+    <div class="col-md-12 text-right">
+         <?php
+             if ($user = $this->identity()) {
+                 echo 'Logged in as: ' . $this->escapeHtml($user);
+             } else {
+                 echo 'Not logged in';
+             }
+         ?>
+        <a class="btn btn-danger btn-xs" href="<?php echo $this->url('logout'); ?>" role="button">logout</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-right">
+        <a class="btn btn-default btn-xs" href="<?php echo $this->url('profile', ['action'=>'add']); ?>" role="button">add</a>
+    </div>
+</div>
+
+<?php foreach($profiles as $profile):?>
+<div class="row">
+    <div class="col-md-4">
+        <a href="<?php echo $this->url('profile', ['action'=>'get', 'id'=>$profile->id]); ?>">
+        <?php echo $profile->name; ?>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <?php echo $profile->address; ?>
+    </div>
+    <div class="col-md-4 text-right">
+        <a class="btn btn-default btn-xs" href="<?php echo $this->url('profile', ['action'=>'edit', 'id'=>$profile->id]); ?>" role="button">edit</a>
+        <a class="btn btn-default btn-xs" href="<?php echo $this->url('profile', ['action'=>'delete', 'id'=>$profile->id]); ?>" role="button">delete</a>
+    </div>
+</div>
+<?php endforeach; ?>

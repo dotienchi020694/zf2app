@@ -1,0 +1,24 @@
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-0" id="chart-container">
+		<canvas id="chart" width="1000" height="400"></canvas>
+	</div>
+</div>
+
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.js">
+</script>
+
+<script>
+$(function() {
+    var api    = '<?php echo $this->url('api', ['action'=>'get-scores']); ?>';
+    $.get(
+        api,
+        function(json) {
+var option ={scaleShowHorizontalLines:true, scaleGridLineColor: "rgba(255,0,0,.05)",scaleGridLineWidth:5}//var option ={scaleBeginAtZero: true,}
+var ctx = $("#chart").get(0).getContext("2d");
+var myNewChart = new Chart(ctx).Bar(json,option);
+        });
+});
+</script>
+

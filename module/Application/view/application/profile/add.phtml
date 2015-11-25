@@ -1,0 +1,22 @@
+<?php
+    $form->setAttribute('action', $this->url('profile', array('action' => 'add')));
+    $form->prepare();
+?>
+<h1>User Registration</h1>
+
+<?php echo $this->form()->openTag($form); ?>
+
+<?php echo $this->formHidden($form->get('id')); ?>
+<div class="row">
+    <div class="col-md-12">
+    <?php echo $this->formRow($form->get('name')); ?>
+    </div>
+    <div class="col-md-12">
+    <?php  echo $this->formRow($form->get('address')); ?>
+    </div>
+    <div class="col-md-12">
+    <?php echo $this->formSubmit($form->get('send')); ?>
+    </div>
+</div>
+
+<?php echo $this->form()->closeTag(); ?>

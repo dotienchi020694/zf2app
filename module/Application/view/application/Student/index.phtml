@@ -1,0 +1,48 @@
+<div class="jumbotron">
+<h1>List of Student's Profile</h1>
+</div>
+<div class="row">
+    <div class="col-md-12 text-right">
+         <?php
+             if ($user = $this->identity()) {
+                 echo 'Logged in as: ' . $this->escapeHtml($user);
+             } else {
+                 echo 'Not logged in';
+             }
+         ?>
+        <a class="btn btn-danger btn-xs" href="<?php echo $this->url('logout'); ?>" role="button">logout</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-right">
+         <input type="text" name ="search">
+        <a class="btn .btn-info btn-xs" href="<?php echo $this->url('logout'); ?>" role="button">Find</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-right">
+        <a class="btn btn-default btn-xs" href="<?php echo $this->url('student', ['action'=>'add']); ?>" role="button">add</a>
+    </div>
+</div>
+<?php foreach($students as $student):?>
+<div class="row">
+    <div class="col-md-1">
+        <a href="<?php echo $this->url('student', ['action'=>'get', 'id'=>$student->id]); ?>">
+        <?php echo $student->id; ?>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <?php echo $student->fullName; ?>
+    </div>
+    <div class="col-md-2">
+        <?php echo $student->address; ?>
+    </div>
+    <div class="col-md-2">
+        <?php echo $student->phoneNumber; ?>
+    </div>
+    <div class="col-md-3 text-right">
+        <a class="btn btn-default btn-xs" href="<?php echo $this->url('student', ['action'=>'edit', 'id'=>$student->id]); ?>" role="button">edit</a>
+        <a class="btn btn-default btn-xs" href="<?php echo $this->url('student', ['action'=>'delete', 'id'=>$student->id]); ?>" role="button">delete</a>
+    </div>
+</div>
+<?php endforeach; ?>

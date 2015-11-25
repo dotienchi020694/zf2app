@@ -1,0 +1,11 @@
+<p>Please confirm to delete</p>
+<p>name: <?php echo $profile->name; ?>
+<p>address: <?php echo $profile->address; ?>
+
+<form action="<?php echo $this->url('profile', ['action'=>'delete', 'id'=>$profile->id]); ?>" method="post">
+<div>
+ <input type="hidden" name="id" value="<?php echo $profile->id; ?>" />
+ <input type="submit" name="confirm" value="Yes" />
+ <input type="submit" name="confirm" value="No" />
+</div>
+</form>

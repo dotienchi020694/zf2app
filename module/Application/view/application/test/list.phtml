@@ -1,0 +1,11 @@
+<div class="jumbotron">
+<h1>List of Profiles</h1>
+</div>
+
+<?php foreach($profiles as $profile ):?>
+<div class="row">
+<div class="col-md-4"><?php echo $profile->name; ?></div>
+<div class="col-md-8"><?php echo $profile->address; ?></div>
+</div>
+
+<?php endforeach; ?>
