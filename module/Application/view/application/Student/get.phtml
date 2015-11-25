@@ -1,0 +1,24 @@
+<div class="alert alert-warning">
+	<p class="text-justify">Profile</p>
+	<p>FullName: <?php echo $student->fullName; ?>	
+	
+	
+	
+	<p>Address: <?php echo $student->address; ?>
+	
+	
+	
+	<p>Phonenumber: <?php echo $student->phoneNumber; ?>
+	
+	<div class="btn-group btn-group-sm">
+	<a class="btn btn-info btn-xs"
+		href="<?php echo $this->url('student', ['action'=>'edit', 'id'=>$student->id]); ?>"
+		role="button"><span class="glyphicon glyphicon-wrench"></span> Edit</a>
+	<a class="btn btn-danger btn-xs"
+		href="<?php echo $this->url('student', ['action'=>'delete', 'id'=>$student->id]); ?>"
+		role="button"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+</div>
+</div>
+
+</div>
+

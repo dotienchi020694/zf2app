@@ -1,25 +1,29 @@
 <?php
-    $form->setAttribute('action', $this->url('student', array('action' => 'add')));
-    $form->prepare();
+$form->setAttribute ( 'action', $this->url ( 'student', array (
+		'action' => 'add' 
+) ) );
+$form->prepare ();
 ?>
-<h1>User Registration</h1>
+<div class="container">
+	<h1>User Registration</h1>
 
 <?php echo $this->form()->openTag($form); ?>
-
 <?php echo $this->formHidden($form->get('id')); ?>
 <div class="row">
-    <div class="col-md-12">
+		<div class="col-md-12">
     <?php echo $this->formRow($form->get('fullName')); ?>
     </div>
-    <div class="col-md-12">
+		<div class="col-md-12">
     <?php  echo $this->formRow($form->get('address')); ?>
     </div>
-    <div class="col-md-12">
+		<div class="col-md-12">
     <?php  echo $this->formRow($form->get('phoneNumber')); ?>
     </div>
-    <div class="col-md-12">
+		<div class="col-md-12">
     <?php echo $this->formSubmit($form->get('send')); ?>
     </div>
-</div>
+	</div>
 
 <?php echo $this->form()->closeTag(); ?>
+
+</div>

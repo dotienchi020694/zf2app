@@ -43,7 +43,7 @@ return array (
 										'defaults' => array (
 												'__NAMESPACE__' => 'Application\Controller',
 												'controller' => 'Profile',
-												'action' => 'index' 
+												'action' => 'list' 
 										) 
 								) 
 						),

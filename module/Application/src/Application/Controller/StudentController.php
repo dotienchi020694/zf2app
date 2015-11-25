@@ -65,6 +65,20 @@ class StudentController extends AbstractActionController{
 				'form' => $form
 		) );
 	}
+	public function getAction(){
+		$id = (int) $this->params('id',0);
+		if(!$id){
+			return $this->request() ->toRoute('student');
+		}
+		$table =$this->getStudentTable();
+		$student = $table->get($id);
+		return new ViewModel ( array (
+				'student' => $student
+		) );
+	}
+	public function searchAction(){
+		//$key = 
+	}
 	public function deleteAction(){
 		$id = ( int ) $this->params ( 'id', 0 );
 		if (! $id) {

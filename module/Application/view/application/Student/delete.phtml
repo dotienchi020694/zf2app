@@ -1,11 +1,15 @@
-<p>Please confirm to delete</p>
-<p>name: <?php echo $student->fullName; ?>
-<p>address: <?php echo $student->address; ?>
-
-<form action="<?php echo $this->url('student', ['action'=>'delete', 'id'=>$student->id]); ?>" method="post">
-<div>
- <input type="hidden" name="id" value="<?php echo $student->id; ?>" />
- <input type="submit" name="confirm" value="Yes" />
- <input type="submit" name="confirm" value="No" />
+<div class="alert alert-warning">
+	<p class="text-justify"> Please confirm to delete</p>
+	<p>name: <?php echo $student->fullName; ?>	
+	<p>address: <?php echo $student->address; ?>
 </div>
+
+<form
+	action="<?php echo $this->url('student', ['action'=>'delete', 'id'=>$student->id]); ?>"
+	method="post">
+	<div>
+		<input type="hidden" name="id" value="<?php echo $student->id; ?>" />
+		<input type="submit" name="confirm" value="Yes" class="btn btn-warning btn-sm" /> <input
+			type="submit" name="confirm" value="No" class = "btn btn-primary btn-sm" />
+	</div>
 </form>

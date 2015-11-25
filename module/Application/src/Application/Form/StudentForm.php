@@ -14,14 +14,21 @@ class StudentForm extends Form{
 				'name'=>'fullName',
 				'type' => 'Text',
 				'options'=>array(
-						'label' => 'FullName'
+						'label' => 'FullName:'
+				),
+				'attributes'=>array(
+						'placeholder'=>'Please enter your name',
 				)
 		));
 		$this->add(array(
 				'name'=>'address',
 				'type'=>'Text',
 				'options'=>array(
-						'label'=>'Address'
+						'label'=>'Address:'
+				),
+				'attributes'=>array(
+						'placeholder'=>'Please enter your address',
+						
 				)
 		));
 		$this->add(array(
@@ -29,6 +36,9 @@ class StudentForm extends Form{
 				'type'=>'Text',
 				'options'=>array(
 						'label'=>'PhoneNumber'
+				),
+				'attributes'=>array(
+						'placeholder'=>'Please enter your phone number',
 				)
 		));
 		$this->add(array(
